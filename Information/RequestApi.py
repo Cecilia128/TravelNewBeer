@@ -37,7 +37,7 @@ def info2scene(info):
 
 
 if __name__ == '__main__':
-    result = get_scene_list("龙岩")
+    result = get_scene_list("长白山")
     print(result)
     for item in result:
         print(item)

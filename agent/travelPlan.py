@@ -3,28 +3,12 @@ import json
 import os
 
 from qwen_agent.llm import get_chat_model
-from seaborn.external.appdirs import system
-from sympy.polys.polyconfig import query
 
 from TravelNewBeer.Information.RequestApi import get_scene_list
 os.environ["DASHSCOPE_API_KEY"] = "sk-5c6a0747d83c452795d5d51d1e3b9f67"
 os.environ["TOGETHER_API_KEY"] = "3ce3f8571f44cbbcd603dd49f0a3a36cdcbd487b6b85f0da2567698b0ef3727a"
 
 # DASHSCOPE_API_KEY = "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"
-
-# Example dummy function hard coded to return the same weather
-# In production, this could be your backend API or an external API
-def get_current_weather(location, unit='fahrenheit'):
-    """Get the current weather in a given location"""
-    if 'tokyo' in location.lower():
-        return json.dumps({'location': 'Tokyo', 'temperature': '10', 'unit': 'celsius'})
-    elif 'san francisco' in location.lower():
-        return json.dumps({'location': 'San Francisco', 'temperature': '72', 'unit': 'fahrenheit'})
-    elif 'paris' in location.lower():
-        return json.dumps({'location': 'Paris', 'temperature': '22', 'unit': 'celsius'})
-    else:
-        return json.dumps({'location': location, 'temperature': 'unknown'})
-
 
 def test(query):
     llm = get_chat_model({
